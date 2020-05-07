@@ -13,6 +13,11 @@ $first_name        = sanitize_text_field($_POST['first_name']);
 $last_name         = sanitize_text_field($_POST['last_name']);
 $email_address     = sanitize_text_field($_POST['email_address']);
 $years_experience  = sanitize_text_field($_POST['years_experience']);
+$race_history = sanitize_text_field($_POST['race_history']);
+$prior_teams = sanitize_text_field($_POST['prior_teams']);
+$racer_bio = sanitize_text_field($_POST['racer_bio']);
+$race_preference = sanitize_text_field($_POST['race_preference']);
+$active = sanitize_text_field($_POST['active']);
 
 if (is_user_logged_in()) {
     $uid = get_current_user_id();
@@ -24,6 +29,11 @@ if (is_user_logged_in()) {
                 , 'last_name' => $last_name
                 , 'email_address' => $email_address
                 , 'years_experience' => $years_experience
+                , 'race_history' => $race_history
+                , 'prior_teams' => $prior_teams
+                , 'racer_bio' => $racer_bio
+                , 'race_preference' => $race_preference
+                , 'active' => $active
                 )
                 , array('racer_id' => $racer_id
                 )
